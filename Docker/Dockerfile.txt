@@ -1,0 +1,12 @@
+FROM ubuntu:20.04
+RUN apt-get update
+RUN apt-get install -y git curl sudo
+RUN curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+RUN apt-get install -y nodejs
+#RUN npm install
+RUN npm install -g @angular/cli
+RUN curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+RUN echo "NODE Version:" && node --version
+RUN echo "NPM Version:" && npm --version
+RUN echo "Azurecli Vesion:" && az --version
+RUN echo "Angularcli Version:" && ng v
